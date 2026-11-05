@@ -5,17 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BankworkX — Coming Soon</title>
 <meta name="description" content="New era of AI banking coming soon. Stay tuned!">
+<meta name="theme-color" content="#000">
 <meta property="og:title" content="BankworkX — Coming Soon">
 <meta property="og:description" content="New era of AI banking coming soon. Stay tuned!">
 <meta property="og:image" content="https://bankworkx.com/1793867542774_image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  html,body{margin:0;height:100%;background:#000}
-  body{display:flex;align-items:center;justify-content:center;overflow:hidden}
-  img{width:100vw;height:100vh;object-fit:contain;display:block}
-  @media (min-aspect-ratio:16/9){img{object-fit:cover}}
+  :root{--cyan:#03ecfa;--cyan2:#18b8f0;--bg:#00060c}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    min-height:100vh;min-height:100dvh;
+    display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(ellipse 70% 45% at 50% 100%, rgba(3,236,250,.28), transparent 70%),
+      radial-gradient(ellipse 60% 60% at 75% 40%, rgba(0,90,120,.35), transparent 70%),
+      radial-gradient(ellipse 50% 50% at 20% 30%, rgba(0,50,80,.35), transparent 70%),
+      var(--bg);
+    color:#fff;font-family:'Poppins',system-ui,sans-serif;
+    overflow:hidden;text-align:center;padding:24px 16px;
+  }
+  /* faint grid + light rays */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(3,236,250,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(3,236,250,.05) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+  body::after{content:"";position:fixed;left:50%;bottom:-10%;width:140vmax;height:70vmax;transform:translateX(-50%);pointer-events:none;
+    background:repeating-conic-gradient(from 270deg at 50% 100%, rgba(3,236,250,.035) 0deg 4deg, transparent 4deg 11deg);
+    mask-image:radial-gradient(ellipse at 50% 100%,#000 10%,transparent 65%);
+    -webkit-mask-image:radial-gradient(ellipse at 50% 100%,#000 10%,transparent 65%)}
+  .bank{position:fixed;right:3vw;top:50%;transform:translateY(-50%);width:min(24vw,340px);opacity:.07;pointer-events:none}
+  main{position:relative;z-index:1;max-width:900px;animation:rise 1s ease-out both}
+  .logo{font-weight:400;font-size:clamp(34px,6vw,60px);letter-spacing:-.5px;margin:0 0 clamp(28px,5vh,48px);line-height:1}
+  .logo span{position:relative;color:var(--cyan);font-weight:600}
+  .logo svg{position:absolute;left:-.55em;top:-.38em;width:1.2em;height:.55em;overflow:visible}
+  h1{font-weight:300;font-size:clamp(28px,6vw,58px);line-height:1.25;margin:0;letter-spacing:-.5px}
+  h1 b{font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tuned{font-weight:700;font-size:clamp(40px,9vw,84px);margin:clamp(32px,7vh,64px) 0 0;letter-spacing:-1px;
+    text-shadow:0 0 18px rgba(3,236,250,.55),0 0 50px rgba(3,236,250,.3)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @media (max-width:600px){.bank{right:50%;transform:translate(50%,-50%);width:80vw;opacity:.04}}
+  @media (prefers-reduced-motion:reduce){main{animation:none}}
 </style>
 </head>
 <body>
-  <img src="1793867542774_image.png" alt="BankworkX — New era of AI banking coming soon. Stay tuned!">
+  <svg class="bank" viewBox="0 0 200 200" fill="none" stroke="#03ecfa" stroke-width="4" aria-hidden="true">
+    <circle cx="100" cy="100" r="92" stroke-width="2"/>
+    <path d="M40 80 L100 45 L160 80 Z"/>
+    <path d="M50 88h100M58 96v52M80 96v52M100 96v52M120 96v52M142 96v52M46 152h108M40 162h120"/>
+  </svg>
+  <main>
+    <div class="logo" aria-label="BankworkX">bankwork<span>x<svg viewBox="0 0 60 28" aria-hidden="true"><path d="M2 24 Q30 -4 54 10" stroke="#03ecfa" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M46 4 L56 10 L47 17" stroke="#03ecfa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <h1>New era of <b>AI banking</b><br>coming soon....</h1>
+    <p class="tuned">Stay tuned!</p>
+  </main>
 </body>
 </html>
